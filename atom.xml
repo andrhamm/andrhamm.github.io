@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Andrew Hammond]]></title>
-  <link href="http://andrhamm.github.io/atom.xml" rel="self"/>
-  <link href="http://andrhamm.github.io/"/>
-  <updated>2014-06-18T14:21:29-04:00</updated>
-  <id>http://andrhamm.github.io/</id>
+  <link href="http://andrhamm.com/atom.xml" rel="self"/>
+  <link href="http://andrhamm.com/"/>
+  <updated>2014-06-18T14:49:45-04:00</updated>
+  <id>http://andrhamm.com/</id>
   <author>
     <name><![CDATA[Andrew Hammond]]></name>
     

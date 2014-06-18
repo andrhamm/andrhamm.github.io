@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://andrhamm.github.io/sitemap.xml 
+Sitemap: http://andrhamm.com/sitemap.xml 
