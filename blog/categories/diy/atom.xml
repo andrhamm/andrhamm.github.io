@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Andrew Hammond]]></title>
-  <link href="http://andrhamm.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: DIY | Andrew Hammond]]></title>
+  <link href="http://andrhamm.com/blog/categories/diy/atom.xml" rel="self"/>
   <link href="http://andrhamm.com/"/>
   <updated>2014-06-23T10:38:05-04:00</updated>
   <id>http://andrhamm.com/</id>
@@ -35,35 +35,6 @@
 
 
 <p>Stay tuned for more updates on the coop.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Exclude Properties From JBuilder Partials]]></title>
-    <link href="http://andrhamm.com/blog/2014/06/18/exclude-properties-from-jbuilder-partials/"/>
-    <updated>2014-06-18T15:04:23-04:00</updated>
-    <id>http://andrhamm.com/blog/2014/06/18/exclude-properties-from-jbuilder-partials</id>
-    <content type="html"><![CDATA[<p>I found the lack of documentation for JBuilder partials to be very frustrating. Ideally I could write one partial for each of my ActiveRecord models and re-use them in all my JBuilder views. The problem comes when you have a model like User, for example, which has one or more Photos. When I request the <code>show</code> action for my User controller, I want the User partial to be rendered with it&rsquo;s Photo as a child (using the Photo partial). On the other hand, when I request the <code>show</code> action for my Photo, I want the Photo partial to be rendered with it&rsquo;s User as a child (using the User partial). This can lead to an infinite loop which, at first glance, can only be solved by making many individual partials for the same model, like <code>photo_without_user</code> and <code>photo_with_user</code>.<!-- more --></p>
-
-<p>Going a little deeper, you&rsquo;ll find that the <code>partial!</code> method will pass any data you give it along to the view (the unrecognized hash keys will be available to the view as local variables of the same name). In the following example, I simply pass a custom variable, <code>exclude</code>, into the call to <code>partial!</code> and use it as a condition in the photo partial view. Obviously this will grow cumbersome if you are nesting partials more than a couple layers deep, but for my use, it works quite well.</p>
-
-<pre><code># In `users/_user.json.jbuilder`:
-json.(user, :id, :name)
-json.photo do
-  json.partial! 'photos/photo', photo: user.photo, exclude: [:user]
-end
-</code></pre>
-
-<p>&hellip;</p>
-
-<pre><code># In `photos/_photo.json.jbuilder`:
-json.(photo, :url, :caption)
-unless exclude.include?(:user)
-  json.user do
-    json.partial! 'users/user', user: photo.user
-  end
-end
-</code></pre>
 ]]></content>
   </entry>
   
