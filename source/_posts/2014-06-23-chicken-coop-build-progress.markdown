@@ -17,7 +17,7 @@ The front of the coop has a window to let in some natural sunlight and allow for
 
 The entire back side of the coop is a swinging door with a really beefy hinge (spring-loaded to prevent the door from remaining open) and latch. This door is essential for cleaning out the cabin and is the only way a person can get into the coop.
 
-The siding is all tounge & groove boards which makes for a very time-consuming build. I'm not complaining though, my father-in-law Chuck had it left over from his house build and gave it to me for free! Similar boards at Lowe's run about $10 each. Each! I would have just left it at plywood if that was my only option, but I had so many of these boards left over that I figured this would be well worth the extra effort. I love how the siding looks, with its nice horizontal grooves, it really adds to the desired "barn" look. Of course the "barn door red" paint with white trim really paid off too!
+The siding is all tongue & groove boards which makes for a very time-consuming build. I'm not complaining though, my father-in-law Chuck had it left over from his house build and gave it to me for free! Similar boards at Lowe's run about $10 each. Each! I would have just left it at plywood if that was my only option, but I had so many of these boards left over that I figured this would be well worth the extra effort. I love how the siding looks, with its nice horizontal grooves, it really adds to the desired "barn" look. Of course the "barn door red" paint with white trim really paid off too!
 
 <iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/jtQfY/embed"></iframe>
 
