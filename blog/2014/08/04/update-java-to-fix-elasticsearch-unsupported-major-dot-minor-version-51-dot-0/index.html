@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Chickens Moved Into the Coop - Andrew Hammond</title>
+  <title>Update Java to Fix ElasticSearch "Unsupported major.minor Version 51.0" - Andrew Hammond</title>
   <meta name="author" content="Andrew Hammond">
 
   
-  <meta name="description" content="This weekend marked a big milestone for our homestead. I made enough progress on the coop build on Saturday that I was able to move the chickens from &hellip;">
+  <meta name="description" content="When I went to install ElasticSearch with Homebrew on Mac OS X, I got the following error message when trying to start up ElasticSearch: "Unsupported &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://andrhamm.com/blog/2014/06/30/chickens-moved-into-the-coop">
+  <link rel="canonical" href="http://andrhamm.com/blog/2014/08/04/update-java-to-fix-elasticsearch-unsupported-major-dot-minor-version-51-dot-0">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Andrew Hammond" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Chickens Moved Into the Coop</h1>
+      <h1 class="entry-title">Update Java to Fix ElasticSearch "Unsupported major.minor Version 51.0"</h1>
     
     
       <p class="meta">
@@ -84,7 +84,7 @@
   
 
 
-<time datetime="2014-06-30T10:01:33-04:00" pubdate data-updated="true">Jun 30<span>th</span>, 2014</time>
+<time datetime="2014-08-04T15:11:54-04:00" pubdate data-updated="true">Aug 4<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://andrhamm.com">Comments</a>
@@ -94,23 +94,33 @@
   </header>
 
 
-<div class="entry-content"><p>This weekend marked a big milestone for our homestead. I made enough progress on the coop build on Saturday that I was able to move the chickens from their 4&#8217; x 4&#8217; brooder (inside a spare room of our house) to the cabin part of the coop before the sun set. I was able to keep an eye on them all of Sunday and make a few adjustments as needed. Check out the album.</p>
+<div class="entry-content"><p>When I went to install ElasticSearch with Homebrew on Mac OS X, I got the following error message when trying to start up ElasticSearch: <code>"Unsupported major.minor version 51.0"</code>. I found the experience kind of sucky, with a lot of misleading or generally unhelpful posts out there when Googling. So naturally I figured I&rsquo;d add to the confusion. Here is how I solved the problem on my machine. <!-- more --></p>
 
-<!-- more -->
+<p>Find out which version of Java you are using:</p>
 
+<pre><code>java -version
+</code></pre>
 
-<p>I added a couple simple supports to mount the roost to. There are two roosts (and the smaller one from their old brooder) made from a branch of the tree I had to cut down while building the roof of the coop. I think it is better to use a natural roost instead of the other option of making them out of 2&#8217; x 4&#8217; lumber.</p>
+<p>This is probably 1.6 if you are on Mac OS X. That was my case, and I needed 1.7 for ElasticSearch.</p>
 
-<p>I also set up a new hanging feeder since they outgrew their chick feeder weeks ago. This one hangs from the ceiling to just a few inches off the floor of the cabin and helps prevent the feeder from being filled up with bedding and waste.</p>
+<p>See where your Java lives:</p>
 
-<p>I finished enclosing the entire run with hardware cloth (better than chicken wire), but I didn&rsquo;t tackle making the main door so I just temporarily stapled hardware cloth right over the opening. Unfortunately this means I can&rsquo;t get in to the run until I&rsquo;m ready to install the door.</p>
+<pre><code>which java
+</code></pre>
 
-<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/mPOcm/embed"></iframe>
+<p>This is probably <code>/usr/bin/java</code> if you haven&rsquo;t monkied with your native install.</p>
 
+<p>Download <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">JDK 1.7</a></p>
 
-<p>There is definitely still a lot to do. Primarily the front door, but also the nest box needs to be finished and the area around the coop will need some landscaping. I&rsquo;m contemplating which kinds of shrubs and mulch to use. The area gets mostly shade during the day. I also plan to build a removable sandbox for the girls to take their dust baths in.</p>
+<pre><code>http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+</code></pre>
 
-<p>Stay tuned for more updates!</p>
+<p>I restarted at this point but my symlink (<code>which java</code>) didn&rsquo;t update. It seems like kind of a shitty way to get what you want, but setting your <code>JAVA_HOME</code> environment variable will now point your scripts to the right version:</p>
+
+<pre><code>export JAVA_HOME="`/usr/libexec/java_home -v '1.7*'`"
+</code></pre>
+
+<p>This sort of stuff seems to come up anytime you mention JDK or JVM being a dependency of anything. Sweet dice&hellip;</p>
 </div>
 
 
@@ -133,12 +143,12 @@
   
 
 
-<time datetime="2014-06-30T10:01:33-04:00" pubdate data-updated="true">Jun 30<span>th</span>, 2014</time>
+<time datetime="2014-08-04T15:11:54-04:00" pubdate data-updated="true">Aug 4<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/diy/'>DIY</a>, <a class='category' href='/blog/categories/chickens/'>chickens</a>, <a class='category' href='/blog/categories/homesteading/'>homesteading</a>
+    <a class='category' href='/blog/categories/development/'>development</a>, <a class='category' href='/blog/categories/software/'>software</a>
   
 </span>
 
@@ -154,10 +164,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/06/23/chicken-coop-build-progress/" title="Previous Post: Chicken Coop Build Progress">&laquo; Chicken Coop Build Progress</a>
+        <a class="basic-alignment left" href="/blog/2014/07/24/downsizing-sucks/" title="Previous Post: Downsizing Sucks">&laquo; Downsizing Sucks</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/07/13/stay-cation-projects-update/" title="Next Post: Stay-cation Projects Update">Stay-cation Projects Update &raquo;</a>
       
     </p>
   </footer>
@@ -261,8 +269,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://andrhamm.com/blog/2014/06/30/chickens-moved-into-the-coop/';
-        var disqus_url = 'http://andrhamm.com/blog/2014/06/30/chickens-moved-into-the-coop/';
+        var disqus_identifier = 'http://andrhamm.com/blog/2014/08/04/update-java-to-fix-elasticsearch-unsupported-major-dot-minor-version-51-dot-0/';
+        var disqus_url = 'http://andrhamm.com/blog/2014/08/04/update-java-to-fix-elasticsearch-unsupported-major-dot-minor-version-51-dot-0/';
         var disqus_script = 'embed.js';
       
     (function () {
