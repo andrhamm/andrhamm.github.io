@@ -22,6 +22,6 @@ Before the brew day really even officially began, I made a big mistake... As I s
 
 When the HLT cooled down, we started the mash and discovered that the HLT coil is so tight, that the water inside the coil forms a column which makes it impossible for the wort inside the coil to hit the setpoint. Compounding the effect was the recirc output at the top of the HLT. It was spraying the returned water into the open air (pointed at the side of the inside of the pot). Even with the lid on, this seemed to be causing a fair amount of heat loss. I temporarily, kind of solved both problems by using a hose for the return (instead of the weldless bulkhead input) and pointing it directly at the coil. This quickly improved heat transfer to the wort inside the coil, allowing the mash temp to finally reach the setpoint after having been stuck well below it for around 30 mins.
 
-ABRUPT ENDING! I've had this post in progress (minimized and lonely) for exactly 1 month and at this point I'm on the verge of my second brew day, so I'm giving up on this post, since you'll read more about the improvements I've made in my next post.
+ABRUPT ENDING! I've had this post in progress (minimized and lonely) for exactly 1 month (started 10/13... it is now 11/13) and at this point I'm on the verge of my second brew day, so I'm giving up on this post, since you'll read more about the improvements I've made in my next post.
 
 Cheers!
